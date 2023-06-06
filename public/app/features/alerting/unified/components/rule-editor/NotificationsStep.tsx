@@ -7,6 +7,7 @@ import { Card, Link, useStyles2 } from '@grafana/ui';
 
 import { RuleFormType, RuleFormValues } from '../../types/rule-form';
 import { GRAFANA_RULES_SOURCE_NAME } from '../../utils/datasource';
+import { createUrl } from '../../utils/url';
 
 import LabelsField from './LabelsField';
 import { RuleEditorSection } from './RuleEditorSection';
@@ -37,8 +38,8 @@ export const NotificationsStep = () => {
               <Card.Heading>Root route – default for all alerts</Card.Heading>
               <Card.Description>
                 Without custom labels, your alert will be routed through the root route. To view and edit the root
-                route, go to <Link href="/alerting/routes">notification policies</Link> or contact your admin in case
-                you are using non-Grafana alert management.
+                route, go to <Link href={createUrl('/alerting/routes')}>notification policies</Link> or contact your
+                admin in case you are using non-Grafana alert management.
               </Card.Description>
             </Card>
           )}

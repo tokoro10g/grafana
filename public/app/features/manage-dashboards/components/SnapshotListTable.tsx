@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import useAsync from 'react-use/lib/useAsync';
 
-import { getBackendSrv, locationService } from '@grafana/runtime';
+import { config, getBackendSrv, locationService } from '@grafana/runtime';
 import { ConfirmModal, Button, LinkButton } from '@grafana/ui';
 
 import { Snapshot } from '../types';
@@ -12,7 +12,7 @@ export function getSnapshots() {
     .then((result: Snapshot[]) => {
       return result.map((snapshot) => ({
         ...snapshot,
-        url: `/dashboard/snapshot/${snapshot.key}`,
+        url: `${config.appSubUrl}/dashboard/snapshot/${snapshot.key}`,
       }));
     });
 }

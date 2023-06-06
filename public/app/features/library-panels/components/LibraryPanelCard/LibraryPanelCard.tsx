@@ -74,7 +74,7 @@ function FolderLink({ libraryPanel }: FolderLinkProps): ReactElement | null {
 
   return (
     <span className={styles.metaContainer}>
-      <Link href={`/dashboards/f/${libraryPanel.meta.folderUid}`}>
+      <Link href={`${config.appSubUrl}/dashboards/f/${libraryPanel.meta.folderUid}`}>
         <Icon name={'folder-upload'} size="sm" />
         <span>{libraryPanel.meta.folderName}</span>
       </Link>
